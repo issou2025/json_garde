@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "city": "Niamey",
+  "country": "Niger",
+  "date": "2026-06-13",
+  "week_start": "2026-06-13",
+  "week_end": "2026-06-13",
+  "updated_at": "2026-06-13T00:00:00Z",
+  "source_name": "Administration Ma Pharmacie Proche",
+  "source_url": "https://github.com/issou2025/json_garde",
+  "warning": "Liste en attente de publication par l'administration. Appelez toujours avant de vous déplacer.",
+  "data": []
+}
