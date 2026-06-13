@@ -7,16 +7,20 @@ import json
 import re
 import sys
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
-from zoneinfo import ZoneInfo
 
 SOURCE_URL = "https://2424pharmaniger.com/pharmacies-garde"
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "pharmacies_garde_current.json"
 CITY = "Niamey"
 MIN_PHARMACIES = 5
+NIAMEY_TIMEZONE = timezone(timedelta(hours=1))
+
+
+def niamey_now() -> datetime:
+    return datetime.now(NIAMEY_TIMEZONE)
 
 
 def clean(value: str) -> str:
@@ -145,7 +149,7 @@ def build_payload(html: str) -> dict:
     if not date_match:
         raise RuntimeError("Date absente du titre de la source")
     source_date = datetime.strptime(date_match.group(1), "%d/%m/%Y").date()
-    today = datetime.now(ZoneInfo("Africa/Niamey")).date()
+    today = niamey_now().date()
     if source_date != today:
         raise RuntimeError(f"Liste source datee du {source_date}, aujourd'hui est le {today}")
 
@@ -187,7 +191,7 @@ def build_payload(html: str) -> dict:
         )
 
     pharmacies.sort(key=lambda item: item["name"].casefold())
-    now = datetime.now(ZoneInfo("Africa/Niamey"))
+    now = niamey_now()
     iso_date = source_date.isoformat()
     return {
         "status": "success",
