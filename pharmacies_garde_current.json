@@ -2,12 +2,30 @@
   "status": "success",
   "city": "Niamey",
   "country": "Niger",
-  "date": "2026-06-13",
-  "week_start": "2026-06-13",
+  "date": "2026-06-12",
+  "week_start": "2026-06-12",
   "week_end": "2026-06-13",
-  "updated_at": "2026-06-13T00:00:00Z",
-  "source_name": "Administration Ma Pharmacie Proche",
+  "updated_at": "2026-06-12T08:00:00Z",
+  "source_name": "Liste publique vérifiée",
   "source_url": "https://github.com/issou2025/json_garde",
-  "warning": "Liste en attente de publication par l'administration. Appelez toujours avant de vous déplacer.",
-  "data": []
+  "warning": "Cette liste date du 12 au 13 juin 2026. Appelez la pharmacie avant de vous déplacer.",
+  "data": [
+    {
+      "id": "pharmacie_saye_niamey",
+      "name": "Pharmacie Saye",
+      "district": "Dar Es Salam",
+      "commune": "Niamey",
+      "address": "Pavé Dar Es Salam",
+      "landmark": "Pavé Dar Es Salam",
+      "phone_numbers": [
+        "20 35 22 64",
+        "70 88 30 85"
+      ],
+      "latitude": 13.5382,
+      "longitude": 2.099,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "Appelez avant déplacement"
+    }
+  ]
 }
