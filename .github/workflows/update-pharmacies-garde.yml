@@ -1,0 +1,43 @@
+name: Mettre a jour les pharmacies de garde
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-pharmacies-garde
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+
+      - name: Configurer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Recuperer et valider la liste du jour
+        run: python scripts/update_duty_pharmacies.py
+
+      - name: Publier uniquement si la liste a change
+        shell: bash
+        run: |
+          if git diff --quiet -- pharmacies_garde_current.json; then
+            echo "Aucun changement a publier."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pharmacies_garde_current.json
+          git commit -m "Mettre a jour les pharmacies de garde"
+          git push
