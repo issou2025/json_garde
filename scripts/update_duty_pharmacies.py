@@ -37,7 +37,7 @@ def format_phone(value: str) -> str:
     digits = re.sub(r"\D", "", value)
     if len(digits) == 8:
         return " ".join(digits[index : index + 2] for index in range(0, 8, 2))
-    return clean(value)
+    return ""
 
 
 class GuardPageParser(HTMLParser):

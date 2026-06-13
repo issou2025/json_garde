@@ -5,7 +5,7 @@
   "date": "2026-06-13",
   "week_start": "2026-06-13",
   "week_end": "2026-06-13",
-  "updated_at": "2026-06-13T18:32:09+01:00",
+  "updated_at": "2026-06-13T18:33:40+01:00",
   "source_name": "2424PharmaNiger - Pharmacies de garde aujourd'hui",
   "source_url": "https://2424pharmaniger.com/pharmacies-garde",
   "warning": "Liste publiée pour le 13/06/2026. Appelez toujours la pharmacie avant de vous déplacer.",
@@ -363,22 +363,6 @@
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_route_torodi",
-      "name": "Pharmacie Route Torodi",
-      "district": "Route Torodi",
-      "commune": "Niamey",
-      "address": "Route Torodi",
-      "landmark": "Route Torodi",
-      "phone_numbers": [
-        "########"
-      ],
-      "latitude": 13.491178,
-      "longitude": 2.089435,
-      "gps_status": "confirmed",
-      "is_open": true,
-      "note": "De garde 24h/24 - Appelez avant déplacement"
-    },
-    {
       "id": "pharmacie_saguia",
       "name": "Pharmacie SAGUIA",
       "district": "Face rond point Saguia",
@@ -422,22 +406,6 @@
       ],
       "latitude": 13.567569,
       "longitude": 2.094476,
-      "gps_status": "confirmed",
-      "is_open": true,
-      "note": "De garde 24h/24 - Appelez avant déplacement"
-    },
-    {
-      "id": "pharmacie_tenere",
-      "name": "Pharmacie Ténéré",
-      "district": "Face ECOBANK Siège",
-      "commune": "Niamey",
-      "address": "Face ECOBANK Siège",
-      "landmark": "Face ECOBANK Siège",
-      "phone_numbers": [
-        "Face ECOBANK Siège"
-      ],
-      "latitude": 13.507967,
-      "longitude": 2.123615,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
