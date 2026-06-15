@@ -1,6 +1,11 @@
 name: Mettre a jour les pharmacies de garde
 
 on:
+  push:
+    paths:
+      - ".github/workflows/update-pharmacies-garde.yml"
+      - "scripts/update_duty_pharmacies.py"
+      - "tests/test_update_duty_pharmacies.py"
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
