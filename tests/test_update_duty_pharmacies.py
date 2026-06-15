@@ -32,12 +32,14 @@ class UpdateDutyPharmaciesTest(unittest.TestCase):
                 updater, "niamey_now", return_value=datetime(2026, 6, 15, 12, 0)
             ),
             patch.object(updater, "load_announcement", return_value="Message public."),
+            patch.object(updater, "load_health_tips", return_value=["Conseil santé."]),
         ):
             payload = updater.build_payload(source_html("15/06/2026"))
 
         self.assertEqual(payload["date"], "2026-06-15")
         self.assertEqual(len(payload["data"]), updater.MIN_PHARMACIES)
         self.assertIn("Message public.", payload["warning"])
+        self.assertEqual(payload["health_tips"], ["Conseil santé."])
 
     def write_existing_publication(self, output_path: Path, date: str) -> None:
         output_path.write_text(
@@ -100,6 +102,7 @@ class UpdateDutyPharmaciesTest(unittest.TestCase):
                 patch.object(updater, "OUTPUT_PATH", output_path),
                 patch.object(updater, "download_source", return_value="<html></html>"),
                 patch.object(updater, "load_announcement", return_value="Nouveau message."),
+                patch.object(updater, "load_health_tips", return_value=["Nouveau conseil."]),
                 patch.object(
                     updater, "niamey_now", return_value=datetime(2026, 6, 15, 12, 0)
                 ),
@@ -108,6 +111,7 @@ class UpdateDutyPharmaciesTest(unittest.TestCase):
 
             updated = json.loads(output_path.read_text(encoding="utf-8"))
             self.assertIn("Nouveau message.", updated["warning"])
+            self.assertEqual(updated["health_tips"], ["Nouveau conseil."])
 
     def test_main_fails_when_source_and_existing_publication_are_invalid(self):
         with tempfile.TemporaryDirectory() as directory:

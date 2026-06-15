@@ -7,6 +7,7 @@ on:
       - "scripts/update_duty_pharmacies.py"
       - "tests/test_update_duty_pharmacies.py"
       - "announcement.txt"
+      - "health_tips.json"
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:

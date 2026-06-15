@@ -16,6 +16,7 @@ from urllib.request import Request, urlopen
 SOURCE_URL = "https://2424pharmaniger.com/pharmacies-garde"
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "pharmacies_garde_current.json"
 ANNOUNCEMENT_PATH = Path(__file__).resolve().parents[1] / "announcement.txt"
+HEALTH_TIPS_PATH = Path(__file__).resolve().parents[1] / "health_tips.json"
 CITY = "Niamey"
 MIN_PHARMACIES = 5
 NIAMEY_TIMEZONE = timezone(timedelta(hours=1))
@@ -52,6 +53,16 @@ def load_announcement() -> str:
         return clean(ANNOUNCEMENT_PATH.read_text(encoding="utf-8"))
     except OSError:
         return ""
+
+
+def load_health_tips() -> list[str]:
+    try:
+        raw_tips = json.loads(HEALTH_TIPS_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    if not isinstance(raw_tips, list):
+        return []
+    return [clean(str(tip)) for tip in raw_tips if clean(str(tip))]
 
 
 def compose_warning(source_date) -> str:
@@ -239,12 +250,13 @@ def build_payload(html: str) -> dict:
         "source_name": "2424PharmaNiger - Pharmacies de garde aujourd'hui",
         "source_url": SOURCE_URL,
         "warning": compose_warning(source_date),
+        "health_tips": load_health_tips(),
         "data": pharmacies,
     }
 
 
 def unchanged(existing: dict, new_payload: dict) -> bool:
-    keys = ("status", "city", "country", "date", "week_start", "week_end", "source_name", "source_url", "warning", "data")
+    keys = ("status", "city", "country", "date", "week_start", "week_end", "source_name", "source_url", "warning", "health_tips", "data")
     return all(existing.get(key) == new_payload.get(key) for key in keys)
 
 
@@ -269,16 +281,18 @@ def can_keep_existing_publication() -> bool:
     return publication_date == now.date() or now.hour < STALE_ALERT_HOUR
 
 
-def update_existing_announcement() -> bool:
+def update_existing_remote_content() -> bool:
     try:
         existing = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
         publication_date = datetime.strptime(existing["date"], "%Y-%m-%d").date()
     except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError):
         return False
     warning = compose_warning(publication_date)
-    if existing.get("warning") == warning:
+    health_tips = load_health_tips()
+    if existing.get("warning") == warning and existing.get("health_tips") == health_tips:
         return False
     existing["warning"] = warning
+    existing["health_tips"] = health_tips
     OUTPUT_PATH.write_text(
         json.dumps(existing, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
@@ -291,13 +305,13 @@ def main() -> int:
     except SourceUnavailableError as error:
         if not can_keep_existing_publication():
             raise
-        announcement_updated = update_existing_announcement()
+        remote_content_updated = update_existing_remote_content()
         print(
             f"AVERTISSEMENT: {error}. "
             "La derniere publication valide est conservee."
             + (
                 " Le message public a ete mis a jour."
-                if announcement_updated
+                if remote_content_updated
                 else ""
             ),
             file=sys.stderr,
