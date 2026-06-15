@@ -27,13 +27,17 @@ def source_html(date: str, pharmacy_count: int = updater.MIN_PHARMACIES) -> str:
 
 class UpdateDutyPharmaciesTest(unittest.TestCase):
     def test_build_payload_accepts_valid_source_for_today(self):
-        with patch.object(
-            updater, "niamey_now", return_value=datetime(2026, 6, 15, 12, 0)
+        with (
+            patch.object(
+                updater, "niamey_now", return_value=datetime(2026, 6, 15, 12, 0)
+            ),
+            patch.object(updater, "load_announcement", return_value="Message public."),
         ):
             payload = updater.build_payload(source_html("15/06/2026"))
 
         self.assertEqual(payload["date"], "2026-06-15")
         self.assertEqual(len(payload["data"]), updater.MIN_PHARMACIES)
+        self.assertIn("Message public.", payload["warning"])
 
     def write_existing_publication(self, output_path: Path, date: str) -> None:
         output_path.write_text(
@@ -87,6 +91,23 @@ class UpdateDutyPharmaciesTest(unittest.TestCase):
             ):
                 with self.assertRaises(updater.SourceUnavailableError):
                     updater.main()
+
+    def test_main_updates_announcement_even_when_source_is_unavailable(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output_path = Path(directory) / "pharmacies_garde_current.json"
+            self.write_existing_publication(output_path, "2026-06-15")
+            with (
+                patch.object(updater, "OUTPUT_PATH", output_path),
+                patch.object(updater, "download_source", return_value="<html></html>"),
+                patch.object(updater, "load_announcement", return_value="Nouveau message."),
+                patch.object(
+                    updater, "niamey_now", return_value=datetime(2026, 6, 15, 12, 0)
+                ),
+            ):
+                self.assertEqual(updater.main(), 0)
+
+            updated = json.loads(output_path.read_text(encoding="utf-8"))
+            self.assertIn("Nouveau message.", updated["warning"])
 
     def test_main_fails_when_source_and_existing_publication_are_invalid(self):
         with tempfile.TemporaryDirectory() as directory:

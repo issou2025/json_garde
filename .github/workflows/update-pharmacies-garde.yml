@@ -6,6 +6,7 @@ on:
       - ".github/workflows/update-pharmacies-garde.yml"
       - "scripts/update_duty_pharmacies.py"
       - "tests/test_update_duty_pharmacies.py"
+      - "announcement.txt"
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:

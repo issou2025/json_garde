@@ -15,6 +15,7 @@ from urllib.request import Request, urlopen
 
 SOURCE_URL = "https://2424pharmaniger.com/pharmacies-garde"
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "pharmacies_garde_current.json"
+ANNOUNCEMENT_PATH = Path(__file__).resolve().parents[1] / "announcement.txt"
 CITY = "Niamey"
 MIN_PHARMACIES = 5
 NIAMEY_TIMEZONE = timezone(timedelta(hours=1))
@@ -44,6 +45,25 @@ def format_phone(value: str) -> str:
     if len(digits) == 8:
         return " ".join(digits[index : index + 2] for index in range(0, 8, 2))
     return ""
+
+
+def load_announcement() -> str:
+    try:
+        return clean(ANNOUNCEMENT_PATH.read_text(encoding="utf-8"))
+    except OSError:
+        return ""
+
+
+def compose_warning(source_date) -> str:
+    return " ".join(
+        part
+        for part in (
+            load_announcement(),
+            f"Liste publiée pour le {source_date.strftime('%d/%m/%Y')}.",
+            "Appelez toujours la pharmacie avant de vous déplacer.",
+        )
+        if part
+    )
 
 
 class GuardPageParser(HTMLParser):
@@ -218,7 +238,7 @@ def build_payload(html: str) -> dict:
         "updated_at": now.isoformat(timespec="seconds"),
         "source_name": "2424PharmaNiger - Pharmacies de garde aujourd'hui",
         "source_url": SOURCE_URL,
-        "warning": f"Liste publiée pour le {source_date.strftime('%d/%m/%Y')}. Appelez toujours la pharmacie avant de vous déplacer.",
+        "warning": compose_warning(source_date),
         "data": pharmacies,
     }
 
@@ -249,15 +269,37 @@ def can_keep_existing_publication() -> bool:
     return publication_date == now.date() or now.hour < STALE_ALERT_HOUR
 
 
+def update_existing_announcement() -> bool:
+    try:
+        existing = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+        publication_date = datetime.strptime(existing["date"], "%Y-%m-%d").date()
+    except (OSError, json.JSONDecodeError, KeyError, TypeError, ValueError):
+        return False
+    warning = compose_warning(publication_date)
+    if existing.get("warning") == warning:
+        return False
+    existing["warning"] = warning
+    OUTPUT_PATH.write_text(
+        json.dumps(existing, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return True
+
+
 def main() -> int:
     try:
         payload = build_payload(download_source())
     except SourceUnavailableError as error:
         if not can_keep_existing_publication():
             raise
+        announcement_updated = update_existing_announcement()
         print(
             f"AVERTISSEMENT: {error}. "
-            "La derniere publication valide est conservee.",
+            "La derniere publication valide est conservee."
+            + (
+                " Le message public a ete mis a jour."
+                if announcement_updated
+                else ""
+            ),
             file=sys.stderr,
         )
         return 0
