@@ -35,24 +35,58 @@ class UpdateDutyPharmaciesTest(unittest.TestCase):
         self.assertEqual(payload["date"], "2026-06-15")
         self.assertEqual(len(payload["data"]), updater.MIN_PHARMACIES)
 
-    def test_main_keeps_valid_publication_when_source_is_stale(self):
+    def write_existing_publication(self, output_path: Path, date: str) -> None:
+        output_path.write_text(
+            json.dumps(
+                {
+                    "status": "success",
+                    "city": updater.CITY,
+                    "date": date,
+                    "data": [{}] * updater.MIN_PHARMACIES,
+                }
+            ),
+            encoding="utf-8",
+        )
+
+    def test_main_keeps_current_publication_when_source_is_unavailable(self):
         with tempfile.TemporaryDirectory() as directory:
             output_path = Path(directory) / "pharmacies_garde_current.json"
-            output_path.write_text(
-                json.dumps(
-                    {
-                        "status": "success",
-                        "city": updater.CITY,
-                        "data": [{}] * updater.MIN_PHARMACIES,
-                    }
-                ),
-                encoding="utf-8",
-            )
+            self.write_existing_publication(output_path, "2026-06-15")
             with (
                 patch.object(updater, "OUTPUT_PATH", output_path),
                 patch.object(updater, "download_source", return_value="<html></html>"),
+                patch.object(
+                    updater, "niamey_now", return_value=datetime(2026, 6, 15, 12, 0)
+                ),
             ):
                 self.assertEqual(updater.main(), 0)
+
+    def test_main_keeps_previous_publication_during_early_morning_grace_period(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output_path = Path(directory) / "pharmacies_garde_current.json"
+            self.write_existing_publication(output_path, "2026-06-14")
+            with (
+                patch.object(updater, "OUTPUT_PATH", output_path),
+                patch.object(updater, "download_source", return_value="<html></html>"),
+                patch.object(
+                    updater, "niamey_now", return_value=datetime(2026, 6, 15, 2, 0)
+                ),
+            ):
+                self.assertEqual(updater.main(), 0)
+
+    def test_main_fails_when_publication_is_still_stale_after_six(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output_path = Path(directory) / "pharmacies_garde_current.json"
+            self.write_existing_publication(output_path, "2026-06-14")
+            with (
+                patch.object(updater, "OUTPUT_PATH", output_path),
+                patch.object(updater, "download_source", return_value="<html></html>"),
+                patch.object(
+                    updater, "niamey_now", return_value=datetime(2026, 6, 15, 6, 17)
+                ),
+            ):
+                with self.assertRaises(updater.SourceUnavailableError):
+                    updater.main()
 
     def test_main_fails_when_source_and_existing_publication_are_invalid(self):
         with tempfile.TemporaryDirectory() as directory:

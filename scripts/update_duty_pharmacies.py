@@ -18,6 +18,7 @@ OUTPUT_PATH = Path(__file__).resolve().parents[1] / "pharmacies_garde_current.js
 CITY = "Niamey"
 MIN_PHARMACIES = 5
 NIAMEY_TIMEZONE = timezone(timedelta(hours=1))
+STALE_ALERT_HOUR = 6
 
 
 class SourceUnavailableError(RuntimeError):
@@ -227,24 +228,32 @@ def unchanged(existing: dict, new_payload: dict) -> bool:
     return all(existing.get(key) == new_payload.get(key) for key in keys)
 
 
-def has_valid_existing_publication() -> bool:
+def can_keep_existing_publication() -> bool:
     try:
         existing = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return False
-    return (
+    is_valid = (
         existing.get("status") == "success"
         and existing.get("city") == CITY
         and isinstance(existing.get("data"), list)
         and len(existing["data"]) >= MIN_PHARMACIES
     )
+    if not is_valid:
+        return False
+    try:
+        publication_date = datetime.strptime(existing["date"], "%Y-%m-%d").date()
+    except (KeyError, TypeError, ValueError):
+        return False
+    now = niamey_now()
+    return publication_date == now.date() or now.hour < STALE_ALERT_HOUR
 
 
 def main() -> int:
     try:
         payload = build_payload(download_source())
     except SourceUnavailableError as error:
-        if not has_valid_existing_publication():
+        if not can_keep_existing_publication():
             raise
         print(
             f"AVERTISSEMENT: {error}. "
