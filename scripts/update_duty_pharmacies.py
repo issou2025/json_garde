@@ -10,6 +10,7 @@ import unicodedata
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 SOURCE_URL = "https://2424pharmaniger.com/pharmacies-garde"
@@ -17,6 +18,10 @@ OUTPUT_PATH = Path(__file__).resolve().parents[1] / "pharmacies_garde_current.js
 CITY = "Niamey"
 MIN_PHARMACIES = 5
 NIAMEY_TIMEZONE = timezone(timedelta(hours=1))
+
+
+class SourceUnavailableError(RuntimeError):
+    """The remote source cannot safely produce a new publication."""
 
 
 def niamey_now() -> datetime:
@@ -135,10 +140,17 @@ def download_source() -> str:
             "Accept-Language": "fr-FR,fr;q=0.9",
         },
     )
-    with urlopen(request, timeout=30) as response:
-        if response.status != 200:
-            raise RuntimeError(f"La source a repondu avec le statut {response.status}")
-        return response.read().decode("utf-8", errors="replace")
+    try:
+        with urlopen(request, timeout=30) as response:
+            if response.status != 200:
+                raise SourceUnavailableError(
+                    f"La source a repondu avec le statut {response.status}"
+                )
+            return response.read().decode("utf-8", errors="replace")
+    except SourceUnavailableError:
+        raise
+    except (HTTPError, URLError, TimeoutError, OSError) as error:
+        raise SourceUnavailableError(f"Source indisponible: {error}") from error
 
 
 def build_payload(html: str) -> dict:
@@ -147,11 +159,13 @@ def build_payload(html: str) -> dict:
 
     date_match = re.search(r"(\d{2}/\d{2}/\d{4})", parser.title)
     if not date_match:
-        raise RuntimeError("Date absente du titre de la source")
+        raise SourceUnavailableError("Date absente du titre de la source")
     source_date = datetime.strptime(date_match.group(1), "%d/%m/%Y").date()
     today = niamey_now().date()
     if source_date != today:
-        raise RuntimeError(f"Liste source datee du {source_date}, aujourd'hui est le {today}")
+        raise SourceUnavailableError(
+            f"Liste source datee du {source_date}, aujourd'hui est le {today}"
+        )
 
     pharmacies = []
     seen_ids: set[str] = set()
@@ -186,7 +200,7 @@ def build_payload(html: str) -> dict:
         )
 
     if len(pharmacies) < MIN_PHARMACIES:
-        raise RuntimeError(
+        raise SourceUnavailableError(
             f"Seulement {len(pharmacies)} pharmacies valides trouvees; publication annulee"
         )
 
@@ -213,8 +227,32 @@ def unchanged(existing: dict, new_payload: dict) -> bool:
     return all(existing.get(key) == new_payload.get(key) for key in keys)
 
 
+def has_valid_existing_publication() -> bool:
+    try:
+        existing = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    return (
+        existing.get("status") == "success"
+        and existing.get("city") == CITY
+        and isinstance(existing.get("data"), list)
+        and len(existing["data"]) >= MIN_PHARMACIES
+    )
+
+
 def main() -> int:
-    payload = build_payload(download_source())
+    try:
+        payload = build_payload(download_source())
+    except SourceUnavailableError as error:
+        if not has_valid_existing_publication():
+            raise
+        print(
+            f"AVERTISSEMENT: {error}. "
+            "La derniere publication valide est conservee.",
+            file=sys.stderr,
+        )
+        return 0
+
     if OUTPUT_PATH.exists():
         try:
             existing = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))

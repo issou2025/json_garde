@@ -29,6 +29,9 @@ jobs:
       - name: Recuperer et valider la liste du jour
         run: python scripts/update_duty_pharmacies.py
 
+      - name: Tester le script de mise a jour
+        run: python -m unittest discover -s tests -v
+
       - name: Publier uniquement si la liste a change
         shell: bash
         run: |
