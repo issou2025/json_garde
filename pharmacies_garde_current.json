@@ -5,7 +5,7 @@
   "date": "2026-07-04",
   "week_start": "2026-07-04",
   "week_end": "2026-07-04",
-  "updated_at": "2026-07-04T01:59:21+01:00",
+  "updated_at": "2026-07-04T14:52:51+01:00",
   "source_name": "2424PharmaNiger - Pharmacies de garde aujourd'hui",
   "source_url": "https://2424pharmaniger.com/pharmacies-garde",
   "warning": "Prenez toujours soin de votre santé. Votre bien-être est précieux. Qu'Allah vous accorde la santé, la patience et la sérénité en ce jour. Liste publiée pour le 04/07/2026. Appelez toujours la pharmacie avant de vous déplacer.",
@@ -20,401 +20,513 @@
   ],
   "data": [
     {
-      "id": "pharmacie_alya",
-      "name": "PHARMACIE ALYA",
-      "district": "CSI Goudel",
+      "id": "pharmacie_3_aout",
+      "name": "Pharmacie 3 AOUT",
+      "district": "Echangeur Mali Bero",
       "commune": "Niamey",
-      "address": "CSI Goudel",
-      "landmark": "CSI Goudel",
+      "address": "Echangeur Mali Bero",
+      "landmark": "Echangeur Mali Bero",
       "phone_numbers": [
-        "91 37 63 87"
+        "28 35 18 18"
       ],
-      "latitude": 13.529348,
-      "longitude": 2.062737,
+      "latitude": 13.534526,
+      "longitude": 2.103046,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_amina",
-      "name": "Pharmacie Amina",
-      "district": "Est située dans le quartier Dar-Salam",
+      "id": "pharmacie_aeroport",
+      "name": "Pharmacie AEROPORT",
+      "district": "Quartier AEROPORT.",
       "commune": "Niamey",
-      "address": "Est située dans le quartier Dar-Salam",
-      "landmark": "Est située dans le quartier Dar-Salam",
+      "address": "Quartier AEROPORT.",
+      "landmark": "Quartier AEROPORT.",
       "phone_numbers": [
-        "20 35 08 81"
+        "20 34 03 49"
       ],
-      "latitude": 13.544217,
-      "longitude": 2.090905,
+      "latitude": 13.467767,
+      "longitude": 2.182095,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_as_salam",
-      "name": "Pharmacie AS SALAM",
-      "district": "Rond point GADAFAWA NIAMEY",
+      "id": "pharmacie_air",
+      "name": "Pharmacie AIR",
+      "district": "Face siège Al-izza",
       "commune": "Niamey",
-      "address": "Rond point GADAFAWA NIAMEY",
-      "landmark": "Rond point GADAFAWA NIAMEY",
+      "address": "Face siège Al-izza, wadata",
+      "landmark": "Face siège Al-izza, wadata",
       "phone_numbers": [
-        "20 75 31 25"
+        "20 74 01 29"
       ],
-      "latitude": 13.53138,
-      "longitude": 2.094208,
+      "latitude": 13.509754,
+      "longitude": 2.145841,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_bassora",
-      "name": "Pharmacie BASSORA",
-      "district": "TALLADJE Marché Tourakou",
+      "id": "pharmacie_arewa",
+      "name": "Pharmacie Arewa",
+      "district": "Quartier Boukoki",
       "commune": "Niamey",
-      "address": "TALLADJE Marché Tourakou",
-      "landmark": "TALLADJE Marché Tourakou",
+      "address": "Quartier Boukoki",
+      "landmark": "Quartier Boukoki",
       "phone_numbers": [
-        "20 38 00 96"
+        "20 73 35 05"
       ],
-      "latitude": 13.502222,
-      "longitude": 2.152927,
+      "latitude": 13.5317,
+      "longitude": 2.12319,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_bonkaney",
-      "name": "Pharmacie BONKANEY",
-      "district": "AVENUE KATSINA",
+      "id": "pharmacie_avenir",
+      "name": "Pharmacie AVENIR",
+      "district": "Avenue Maurice de lens",
       "commune": "Niamey",
-      "address": "AVENUE KATSINA, Marché Bonkaney",
-      "landmark": "AVENUE KATSINA, Marché Bonkaney",
+      "address": "Avenue Maurice de lens",
+      "landmark": "Avenue Maurice de lens",
       "phone_numbers": [
-        "20 36 36 70"
+        "20 75 38 69"
       ],
-      "latitude": 13.533345,
-      "longitude": 2.132082,
+      "latitude": 13.52773,
+      "longitude": 2.09649,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_cite_renaissance",
-      "name": "Pharmacie CITE RENAISSANCE",
-      "district": "Sonuci renaissance",
+      "id": "pharmacie_bobiel",
+      "name": "Pharmacie BOBIEL",
+      "district": "Bobiel",
       "commune": "Niamey",
-      "address": "Sonuci renaissance",
-      "landmark": "Sonuci renaissance",
+      "address": "Bobiel",
+      "landmark": "Bobiel",
       "phone_numbers": [
-        "91 87 23 51"
+        "21 76 70 62"
       ],
-      "latitude": 13.571922,
-      "longitude": 2.048672,
+      "latitude": 13.551753,
+      "longitude": 2.09716,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_ecole_canada",
-      "name": "Pharmacie Ecole Canada",
-      "district": "QUARTIER NOUVEAU MARCHE",
+      "id": "pharmacie_carrefour_6eme",
+      "name": "Pharmacie CARREFOUR 6eme",
+      "district": "Rond Point 6 ième",
       "commune": "Niamey",
-      "address": "QUARTIER NOUVEAU MARCHE",
-      "landmark": "QUARTIER NOUVEAU MARCHE",
+      "address": "Rond Point 6 ième",
+      "landmark": "Rond Point 6 ième",
       "phone_numbers": [
-        "20 74 33 69"
+        "20 73 47 90"
       ],
-      "latitude": 13.508934,
-      "longitude": 2.129882,
+      "latitude": 13.502877,
+      "longitude": 2.129673,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_gawado_aeroport",
-      "name": "Pharmacie GAWADO AEROPORT",
-      "district": "En face de l'école Falmey",
+      "id": "pharmacie_ceg25_ryad",
+      "name": "PHARMACIE CEG25 RYAD",
+      "district": "En face du CEG25",
       "commune": "Niamey",
-      "address": "En face de l'école Falmey",
-      "landmark": "En face de l'école Falmey",
+      "address": "En face du CEG25",
+      "landmark": "En face du CEG25",
       "phone_numbers": [
-        "80 97 19 12"
+        "80 68 68 11"
       ],
-      "latitude": 13.458407,
-      "longitude": 2.181246,
+      "latitude": 13.55031,
+      "longitude": 2.07585,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_hopital_de_reference",
-      "name": "Pharmacie HOPITAL DE REFERENCE",
-      "district": "HOPITAL DE REFERENCE de Niamey",
+      "id": "pharmacie_centre_aere_bceao",
+      "name": "Pharmacie Centre Aéré BCEAO",
+      "district": "Centre Aéré BCEAO",
       "commune": "Niamey",
-      "address": "HOPITAL DE REFERENCE de Niamey",
-      "landmark": "HOPITAL DE REFERENCE de Niamey",
+      "address": "Centre Aéré BCEAO",
+      "landmark": "Centre Aéré BCEAO",
       "phone_numbers": [
-        "96 96 65 35"
+        "80 06 61 58"
       ],
-      "latitude": 13.58803,
-      "longitude": 2.094208,
+      "latitude": 13.564522,
+      "longitude": 2.087362,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_jangorzo",
-      "name": "Pharmacie JANGORZO",
-      "district": "RUE DU DJADO Quartier Jangorzo",
+      "id": "pharmacie_choukr_allah",
+      "name": "Pharmacie Choukr'ALLAH",
+      "district": "Laterite Fenifoot",
       "commune": "Niamey",
-      "address": "RUE DU DJADO Quartier Jangorzo",
-      "landmark": "RUE DU DJADO Quartier Jangorzo",
+      "address": "Laterite Fenifoot, face station Tamesna",
+      "landmark": "Laterite Fenifoot, face station Tamesna",
       "phone_numbers": [
-        "20 34 04 68"
+        "90 02 04 80"
       ],
-      "latitude": 13.518719,
-      "longitude": 2.142069,
+      "latitude": 13.574277,
+      "longitude": 2.093792,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_kalley_est",
-      "name": "Pharmacie Kalley Est",
-      "district": "BOULEVARD DE L'ISLAM",
+      "id": "pharmacie_cite_chinoise",
+      "name": "Pharmacie cité chinoise",
+      "district": "Cité Chinoise Près du CSP Manou Diatta",
       "commune": "Niamey",
-      "address": "BOULEVARD DE L'ISLAM, Face grande mosquée",
-      "landmark": "BOULEVARD DE L'ISLAM, Face grande mosquée",
+      "address": "Cité Chinoise Près du CSP Manou Diatta",
+      "landmark": "Cité Chinoise Près du CSP Manou Diatta",
       "phone_numbers": [
-        "20 74 29 99"
+        "90 09 08 27"
       ],
-      "latitude": 13.519602,
-      "longitude": 2.131836,
+      "latitude": 13.55817,
+      "longitude": 2.11101,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_kawsar",
-      "name": "Pharmacie KAWSAR",
-      "district": "Citée député",
+      "id": "pharmacie_citee_bceao",
+      "name": "Pharmacie Citée BCEAO",
+      "district": "Quartier BCEAO",
       "commune": "Niamey",
-      "address": "Citée député",
-      "landmark": "Citée député",
+      "address": "Quartier BCEAO, marché Albarka",
+      "landmark": "Quartier BCEAO, marché Albarka",
       "phone_numbers": [
-        "99 12 49 99"
+        "21 88 79 68"
       ],
-      "latitude": 13.558129,
-      "longitude": 2.133847,
+      "latitude": 13.533389,
+      "longitude": 2.1394,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_la_reference",
-      "name": "Pharmacie La RÉFÉRENCE",
-      "district": "QUARTIER SAREY KOUBOU Niamey 2000 rond point Tagabati",
+      "id": "pharmacie_dendi",
+      "name": "Pharmacie DENDI",
+      "district": "Bassora Château Koirey",
       "commune": "Niamey",
-      "address": "QUARTIER SAREY KOUBOU Niamey 2000 rond point Tagabati",
-      "landmark": "QUARTIER SAREY KOUBOU Niamey 2000 rond point Tagabati",
+      "address": "Bassora Château Koirey",
+      "landmark": "Bassora Château Koirey",
       "phone_numbers": [
-        "91 48 75 03"
+        "89 14 88 82"
       ],
-      "latitude": 13.513541,
-      "longitude": 2.180354,
+      "latitude": 13.50951,
+      "longitude": 2.173066,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_les_jumelles",
-      "name": "Pharmacie Les Jumelles",
-      "district": "Derrière FENIFOOT",
+      "id": "pharmacie_des_arenes",
+      "name": "Pharmacie des Arenes",
+      "district": "Arène de lutte de Niamey",
       "commune": "Niamey",
-      "address": "Derrière FENIFOOT",
-      "landmark": "Derrière FENIFOOT",
+      "address": "Arène de lutte de Niamey",
+      "landmark": "Arène de lutte de Niamey",
       "phone_numbers": [
-        "92 02 15 15"
+        "20 74 16 11"
       ],
-      "latitude": 13.57099,
-      "longitude": 2.09067,
+      "latitude": 13.515663,
+      "longitude": 2.138266,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_liptako",
-      "name": "Pharmacie LIPTAKO",
-      "district": "En face de Caren Assurance Rive Droite",
+      "id": "pharmacie_deyzebon",
+      "name": "Pharmacie DEYZEBON",
+      "district": "DEYZEBON",
       "commune": "Niamey",
-      "address": "En face de Caren Assurance Rive Droite",
-      "landmark": "En face de Caren Assurance Rive Droite",
+      "address": "DEYZEBON",
+      "landmark": "DEYZEBON",
       "phone_numbers": [
-        "20 31 51 20"
+        "20 73 67 90"
       ],
-      "latitude": 13.490968,
-      "longitude": 2.095391,
+      "latitude": 13.522797,
+      "longitude": 2.11192,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_maison_economique",
-      "name": "Pharmacie MAISON ECONOMIQUE",
-      "district": "QUARTIER MAISONS ECONOMIQUES",
+      "id": "pharmacie_el_nazr",
+      "name": "Pharmacie EL NAZR",
+      "district": "Immeuble El Nasr",
       "commune": "Niamey",
-      "address": "QUARTIER MAISONS ECONOMIQUES",
-      "landmark": "QUARTIER MAISONS ECONOMIQUES",
+      "address": "Immeuble El Nasr",
+      "landmark": "Immeuble El Nasr",
       "phone_numbers": [
-        "20 73 90 51"
+        "20 73 47 72"
       ],
-      "latitude": 13.50918,
-      "longitude": 2.11904,
+      "latitude": 13.510673,
+      "longitude": 2.110983,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_nordire",
-      "name": "Pharmacie Nordire",
-      "district": "Quartier Nordiré",
+      "id": "pharmacie_escadrille",
+      "name": "Pharmacie ESCADRILLE",
+      "district": "300 m marché HAMA PATE en allant vers l'Escadrille",
       "commune": "Niamey",
-      "address": "Quartier Nordiré",
-      "landmark": "Quartier Nordiré",
+      "address": "300 m marché HAMA PATE en allant vers l'Escadrille",
+      "landmark": "300 m marché HAMA PATE en allant vers l'Escadrille",
       "phone_numbers": [
-        "90 10 10 26"
+        "92 80 76 23"
       ],
-      "latitude": 13.494496,
-      "longitude": 2.074437,
+      "latitude": 13.492625,
+      "longitude": 2.153616,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_nouah",
-      "name": "Pharmacie NOUAH",
-      "district": "BOULEVARD MALI BERO",
+      "id": "pharmacie_francophonie",
+      "name": "Pharmacie Francophonie",
+      "district": "Village de la francophonie",
       "commune": "Niamey",
-      "address": "BOULEVARD MALI BERO, Djeddah NIAMEY",
-      "landmark": "BOULEVARD MALI BERO, Djeddah NIAMEY",
+      "address": "Village de la francophonie",
+      "landmark": "Village de la francophonie",
       "phone_numbers": [
-        "20 73 93 10"
+        "20 32 20 30"
       ],
-      "latitude": 13.534046,
-      "longitude": 2.111043,
+      "latitude": 13.568328,
+      "longitude": 2.110298,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_populaire_sony",
-      "name": "Pharmacie Populaire Sony",
-      "district": "QUARTIER SONY",
+      "id": "pharmacie_kirkissoye",
+      "name": "PHARMACIE Kirkissoye",
+      "district": "Quartier Gawaye",
       "commune": "Niamey",
-      "address": "QUARTIER SONY",
-      "landmark": "QUARTIER SONY",
+      "address": "Quartier Gawaye",
+      "landmark": "Quartier Gawaye",
       "phone_numbers": [
-        "20 73 49 71"
+        "88 03 16 27"
       ],
-      "latitude": 13.520169,
-      "longitude": 2.122052,
+      "latitude": 13.480464,
+      "longitude": 2.111978,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_renaissance",
-      "name": "Pharmacie Renaissance",
-      "district": "QUARTIER BANIZOUMBOU 2",
+      "id": "pharmacie_lamorde",
+      "name": "Pharmacie LAMORDE",
+      "district": "Face CHU lamorde",
       "commune": "Niamey",
-      "address": "QUARTIER BANIZOUMBOU 2",
-      "landmark": "QUARTIER BANIZOUMBOU 2",
+      "address": "Face CHU lamorde",
+      "landmark": "Face CHU lamorde",
       "phone_numbers": [
-        "20 36 00 99"
+        "20 31 59 46"
       ],
-      "latitude": 13.548617,
-      "longitude": 2.13441,
+      "latitude": 13.503175,
+      "longitude": 2.079944,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_saguia",
-      "name": "Pharmacie SAGUIA",
-      "district": "Face rond point Saguia",
+      "id": "pharmacie_lazaret",
+      "name": "PHARMACIE LAZARET",
+      "district": "QUARTIER LAZARET",
       "commune": "Niamey",
-      "address": "Face rond point Saguia",
-      "landmark": "Face rond point Saguia",
+      "address": "QUARTIER LAZARET",
+      "landmark": "QUARTIER LAZARET",
       "phone_numbers": [
-        "80 96 00 93"
+        "92 91 08 64"
       ],
-      "latitude": 13.468279,
-      "longitude": 2.104,
+      "latitude": 13.551223,
+      "longitude": 2.125557,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_sante_plus",
-      "name": "Pharmacie Sante Plus",
-      "district": "Boulevard tanimoune face maternité",
+      "id": "pharmacie_moaga_losso_goungou",
+      "name": "Pharmacie MOAGA LOSSO GOUNGOU",
+      "district": "Lossogoungo",
       "commune": "Niamey",
-      "address": "Boulevard tanimoune face maternité",
-      "landmark": "Boulevard tanimoune face maternité",
+      "address": "Lossogoungo",
+      "landmark": "Lossogoungo",
       "phone_numbers": [
-        "80 06 78 25"
+        "92 19 80 96"
       ],
-      "latitude": 13.56098,
-      "longitude": 2.08192,
+      "latitude": 13.542539,
+      "longitude": 2.031715,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_sos",
-      "name": "Pharmacie SOS",
-      "district": "Orphelinat SOS enfant",
+      "id": "pharmacie_niamey_2000",
+      "name": "Pharmacie Niamey 2000",
+      "district": "Niamey 2000.",
       "commune": "Niamey",
-      "address": "Orphelinat SOS enfant",
-      "landmark": "Orphelinat SOS enfant",
+      "address": "Niamey 2000.",
+      "landmark": "Niamey 2000.",
       "phone_numbers": [
-        "20 35 15 66"
+        "91 24 97 98"
       ],
-      "latitude": 13.551,
-      "longitude": 2.10398,
+      "latitude": 13.528849,
+      "longitude": 2.181512,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_vogue",
-      "name": "Pharmacie VOGUE",
-      "district": "FACE PALAIS DES SPORTS CC",
+      "id": "pharmacie_poste",
+      "name": "Pharmacie POSTE",
+      "district": "Rond point station Oillybia ex Telwa",
       "commune": "Niamey",
-      "address": "FACE PALAIS DES SPORTS CC, Stade général Seyni Kountché",
-      "landmark": "FACE PALAIS DES SPORTS CC, Stade général Seyni Kountché",
+      "address": "Rond point station Oillybia ex Telwa",
+      "landmark": "Rond point station Oillybia ex Telwa",
       "phone_numbers": [
-        "20 72 58 88"
+        "80 06 79 43"
       ],
-      "latitude": 13.527781,
-      "longitude": 2.106178,
+      "latitude": 13.52127,
+      "longitude": 2.151836,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_voix_express",
-      "name": "Pharmacie Voix Express",
-      "district": "Près de la NIGELEC Citée Fayçal",
+      "id": "pharmacie_recasement",
+      "name": "PHARMACIE RECASEMENT",
+      "district": "Quartier Récasement",
       "commune": "Niamey",
-      "address": "Près de la NIGELEC Citée Fayçal",
-      "landmark": "Près de la NIGELEC Citée Fayçal",
+      "address": "Quartier Récasement",
+      "landmark": "Quartier Récasement",
       "phone_numbers": [
-        "90 32 75 95"
+        "20 35 03 88"
       ],
-      "latitude": 13.500742,
-      "longitude": 2.133572,
+      "latitude": 13.54083031,
+      "longitude": 2.08696046,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_ridwane",
+      "name": "Pharmacie RIDWANE",
+      "district": "Habou tagui Yantala",
+      "commune": "Niamey",
+      "address": "Habou tagui Yantala",
+      "landmark": "Habou tagui Yantala",
+      "phone_numbers": [
+        "20 35 06 66"
+      ],
+      "latitude": 13.536569,
+      "longitude": 2.08098,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_rond_point",
+      "name": "Pharmacie ROND POINT",
+      "district": "Face Nigelec siège",
+      "commune": "Niamey",
+      "address": "Face Nigelec siège",
+      "landmark": "Face Nigelec siège",
+      "phone_numbers": [
+        "20 73 42 83"
+      ],
+      "latitude": 13.51694,
+      "longitude": 2.10408,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_salbaz",
+      "name": "Pharmacie SALBAZ",
+      "district": "Tchangarey non loin de HalirouBakoye",
+      "commune": "Niamey",
+      "address": "Tchangarey non loin de HalirouBakoye",
+      "landmark": "Tchangarey non loin de HalirouBakoye",
+      "phone_numbers": [
+        "92 70 30 00"
+      ],
+      "latitude": 13.59022,
+      "longitude": 2.08467,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_saye",
+      "name": "Pharmacie saye",
+      "district": "Pavée Dar Es Salam",
+      "commune": "Niamey",
+      "address": "Pavée Dar Es Salam",
+      "landmark": "Pavée Dar Es Salam",
+      "phone_numbers": [
+        "70 88 30 85"
+      ],
+      "latitude": 13.538216,
+      "longitude": 2.099026,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_sira",
+      "name": "Pharmacie SIRA",
+      "district": "Koira Kano Nord",
+      "commune": "Niamey",
+      "address": "Koira Kano Nord",
+      "landmark": "Koira Kano Nord",
+      "phone_numbers": [
+        "20 37 34 66"
+      ],
+      "latitude": 13.54703,
+      "longitude": 2.064655,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_tadjeje",
+      "name": "Pharmacie TADJEJE",
+      "district": "RN N°1",
+      "commune": "Niamey",
+      "address": "RN N°1, Aéroport",
+      "landmark": "RN N°1, Aéroport",
+      "phone_numbers": [
+        "21 88 67 39"
+      ],
+      "latitude": 13.464001,
+      "longitude": 2.193304,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_zana",
+      "name": "Pharmacie Zana",
+      "district": "Pharmacie ZANNA se trouve à proximité du collège d'Institut Supérieur Privé de Management",
+      "commune": "Niamey",
+      "address": "Pharmacie ZANNA se trouve à proximité du collège d'Institut Supérieur Privé de Management, ainsi que de Rond point Salou Djibo.",
+      "landmark": "Pharmacie ZANNA se trouve à proximité du collège d'Institut Supérieur Privé de Management, ainsi que de Rond point Salou Djibo.",
+      "phone_numbers": [
+        "91 14 58 37"
+      ],
+      "latitude": 13.537567,
+      "longitude": 2.146081,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
