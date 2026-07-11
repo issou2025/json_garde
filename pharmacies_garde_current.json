@@ -5,7 +5,7 @@
   "date": "2026-07-11",
   "week_start": "2026-07-11",
   "week_end": "2026-07-11",
-  "updated_at": "2026-07-11T00:35:15+01:00",
+  "updated_at": "2026-07-11T19:34:13+01:00",
   "source_name": "2424PharmaNiger - Pharmacies de garde aujourd'hui",
   "source_url": "https://2424pharmaniger.com/pharmacies-garde",
   "warning": "Prenez toujours soin de votre santé. Votre bien-être est précieux. Qu'Allah vous accorde la santé, la patience et la sérénité en ce jour. Liste publiée pour le 11/07/2026. Appelez toujours la pharmacie avant de vous déplacer.",
@@ -36,22 +36,6 @@
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_aeroport",
-      "name": "Pharmacie AEROPORT",
-      "district": "Quartier AEROPORT.",
-      "commune": "Niamey",
-      "address": "Quartier AEROPORT.",
-      "landmark": "Quartier AEROPORT.",
-      "phone_numbers": [
-        "20 34 03 49"
-      ],
-      "latitude": 13.467767,
-      "longitude": 2.182095,
-      "gps_status": "confirmed",
-      "is_open": true,
-      "note": "De garde 24h/24 - Appelez avant déplacement"
-    },
-    {
       "id": "pharmacie_air",
       "name": "Pharmacie AIR",
       "district": "Face siège Al-izza",
@@ -63,6 +47,38 @@
       ],
       "latitude": 13.509754,
       "longitude": 2.145841,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_al_forma",
+      "name": "Pharmacie Al forma",
+      "district": "Rond Point farkey bi Niamey 2000",
+      "commune": "Niamey",
+      "address": "Rond Point farkey bi Niamey 2000",
+      "landmark": "Rond Point farkey bi Niamey 2000",
+      "phone_numbers": [
+        "84 73 40 20"
+      ],
+      "latitude": 13.51392,
+      "longitude": 2.1856,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_amana_gaweye",
+      "name": "Pharmacie AMANA GAWEYE",
+      "district": "Maternité GAWEYE",
+      "commune": "Niamey",
+      "address": "Maternité GAWEYE",
+      "landmark": "Maternité GAWEYE",
+      "phone_numbers": [
+        "91 26 87 18"
+      ],
+      "latitude": 13.487781,
+      "longitude": 2.106089,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
@@ -212,22 +228,6 @@
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_dendi",
-      "name": "Pharmacie DENDI",
-      "district": "Bassora Château Koirey",
-      "commune": "Niamey",
-      "address": "Bassora Château Koirey",
-      "landmark": "Bassora Château Koirey",
-      "phone_numbers": [
-        "89 14 88 82"
-      ],
-      "latitude": 13.50951,
-      "longitude": 2.173066,
-      "gps_status": "confirmed",
-      "is_open": true,
-      "note": "De garde 24h/24 - Appelez avant déplacement"
-    },
-    {
       "id": "pharmacie_des_arenes",
       "name": "Pharmacie des Arenes",
       "district": "Arène de lutte de Niamey",
@@ -308,38 +308,6 @@
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_kirkissoye",
-      "name": "PHARMACIE Kirkissoye",
-      "district": "Quartier Gawaye",
-      "commune": "Niamey",
-      "address": "Quartier Gawaye",
-      "landmark": "Quartier Gawaye",
-      "phone_numbers": [
-        "88 03 16 27"
-      ],
-      "latitude": 13.480464,
-      "longitude": 2.111978,
-      "gps_status": "confirmed",
-      "is_open": true,
-      "note": "De garde 24h/24 - Appelez avant déplacement"
-    },
-    {
-      "id": "pharmacie_lamorde",
-      "name": "Pharmacie LAMORDE",
-      "district": "Face CHU lamorde",
-      "commune": "Niamey",
-      "address": "Face CHU lamorde",
-      "landmark": "Face CHU lamorde",
-      "phone_numbers": [
-        "20 31 59 46"
-      ],
-      "latitude": 13.503175,
-      "longitude": 2.079944,
-      "gps_status": "confirmed",
-      "is_open": true,
-      "note": "De garde 24h/24 - Appelez avant déplacement"
-    },
-    {
       "id": "pharmacie_lazaret",
       "name": "PHARMACIE LAZARET",
       "district": "QUARTIER LAZARET",
@@ -351,6 +319,22 @@
       ],
       "latitude": 13.551223,
       "longitude": 2.125557,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
+      "id": "pharmacie_liberte_koira_tegui",
+      "name": "Pharmacie Liberté Koira Tegui",
+      "district": "Face Grande porte Gendarmerie",
+      "commune": "Niamey",
+      "address": "Face Grande porte Gendarmerie",
+      "landmark": "Face Grande porte Gendarmerie",
+      "phone_numbers": [
+        "94 24 09 15"
+      ],
+      "latitude": 13.584784,
+      "longitude": 2.108948,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
@@ -372,17 +356,17 @@
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
-      "id": "pharmacie_niamey_2000",
-      "name": "Pharmacie Niamey 2000",
-      "district": "Niamey 2000.",
+      "id": "pharmacie_niamey_nyala",
+      "name": "Pharmacie NIAMEY NYALA",
+      "district": "Route Niamey nyala",
       "commune": "Niamey",
-      "address": "Niamey 2000.",
-      "landmark": "Niamey 2000.",
+      "address": "Route Niamey nyala",
+      "landmark": "Route Niamey nyala",
       "phone_numbers": [
-        "91 24 97 98"
+        "20 35 27 88"
       ],
-      "latitude": 13.528849,
-      "longitude": 2.181512,
+      "latitude": 13.54657,
+      "longitude": 2.07649,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
@@ -452,6 +436,22 @@
       "note": "De garde 24h/24 - Appelez avant déplacement"
     },
     {
+      "id": "pharmacie_saga",
+      "name": "Pharmacie SAGA",
+      "district": "SAGA",
+      "commune": "Niamey",
+      "address": "SAGA",
+      "landmark": "SAGA",
+      "phone_numbers": [
+        "98 45 88 13"
+      ],
+      "latitude": 13.47207,
+      "longitude": 2.13943,
+      "gps_status": "confirmed",
+      "is_open": true,
+      "note": "De garde 24h/24 - Appelez avant déplacement"
+    },
+    {
       "id": "pharmacie_salbaz",
       "name": "Pharmacie SALBAZ",
       "district": "Tchangarey non loin de HalirouBakoye",
@@ -495,22 +495,6 @@
       ],
       "latitude": 13.54703,
       "longitude": 2.064655,
-      "gps_status": "confirmed",
-      "is_open": true,
-      "note": "De garde 24h/24 - Appelez avant déplacement"
-    },
-    {
-      "id": "pharmacie_tadjeje",
-      "name": "Pharmacie TADJEJE",
-      "district": "RN N°1",
-      "commune": "Niamey",
-      "address": "RN N°1, Aéroport",
-      "landmark": "RN N°1, Aéroport",
-      "phone_numbers": [
-        "21 88 67 39"
-      ],
-      "latitude": 13.464001,
-      "longitude": 2.193304,
       "gps_status": "confirmed",
       "is_open": true,
       "note": "De garde 24h/24 - Appelez avant déplacement"
